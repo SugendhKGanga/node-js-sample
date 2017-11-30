@@ -77,7 +77,7 @@ pipeline {
             steps {
                 sh 'echo Hello'
                 //sh 'kubectl patch deployment ${deployment} -p $"spec:\n   containers:\n   - name: front-end\n     image: ${image}"'
-                sh 'kubect l create -f deploy.yml'
+                sh 'kubectl create -f deploy.yml'
                 sh 'kubectl patch deployment ${deployment} -p $"spec:\n   containers:\n   - name: front-end\n     image: ${image}"'
                 sh 'kubectl config use-context test1.sogendh.com'
             }
