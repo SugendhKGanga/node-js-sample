@@ -35,7 +35,8 @@ pipeline {
         }
         stage("Docker image build") {
             steps {
-                sh 'cd node-js-sample &&  sudo docker build -t nodejs-image-new .'
+               // sh 'cd node-js-sample &&  sudo docker build -t nodejs-image-new .'
+                sh 'sudo docker build -t nodejs-image-new .'
             }
         }
         stage("Docker image tag") {
