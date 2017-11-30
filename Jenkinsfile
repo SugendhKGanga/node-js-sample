@@ -21,7 +21,8 @@ pipeline {
     deployment = "nodejs"
     DEPLOYMENTFILE = "deploy-green.yml"
     VERSION= "${BUILD_ID}"
-    image = "${env.account}.dkr.ecr.us-east-1.amazonaws.com/demo-poc:nodejs-image-${env.VERSION}"
+    // image = "${env.account}.dkr.ecr.us-east-1.amazonaws.com/demo-poc:nodejs-image-${env.VERSION}"
+     image = "${account}.dkr.ecr.us-east-1.amazonaws.com/demo-poc:nodejs-image-${env.VERSION}"
      }
     
     stages {
