@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "${params.buildVersion}"
                 sh '[ -d "node-js-sample" ] && sudo rm -rf node-js-sample'
-                sh 'git clone https://github.com/durgadeviramadoss/node-js-sample.git'
+                sh 'git clone -b durgadevi https://github.com/SugendhKGanga/node-js-sample.git'
             }
         }
         stage("Docker image build") {
