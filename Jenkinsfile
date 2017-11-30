@@ -16,7 +16,7 @@ pipeline {
     // other env vars in environment variable values, but that will be possible
     // when https://issues.jenkins-ci.org/browse/JENKINS-41748 is merged and
     // released.
-    account = "958306274796"
+    account = "410602862282"
     service = "my-service"
     deployment = "nodejs"
     DEPLOYMENTFILE = "deploy-green.yml"
@@ -76,6 +76,7 @@ pipeline {
             steps {
                 sh 'echo Hello'
                 sh 'kubectl patch deployment ${deployment} -p $"spec:\n   containers:\n   - name: front-end\n     image: ${image}"'
+                sh 'kubectl config use-context test1.sogendh.com'
             }
         }
         stage("Blue-green Deployment") {
